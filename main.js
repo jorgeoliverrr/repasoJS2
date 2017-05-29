@@ -14,7 +14,31 @@
 
 // JQUERY
 // JQuery signo $() identifica la llamada a JQuery
-$(function()){
+// $(function()){
 // buscar etiquta por ID se llama con el elemento #  
-    console.log('#p')
-}
+    // asigna a la variable parrafo el contenido de la etiqueta html p (lorem ipsu...)
+    // var parrafo = $('#p').html()
+    // console.log(parrafo)
+    // remplaza contenido de la etiqueta html p a 'Hola mundo'
+    // $('#p').html('Hola Mundo')
+// }
+
+/**
+ * Crear 3 etiquetas HTML, que deben contener: 
+ * Nombre
+ * Apellido
+ * Edad
+ * Imprimir en una cuarta etiqueta:
+ * Bienvenido {nombre} {apellido}, tienes {edad} años
+ * 
+ */
+var nom = $('#nombre').html()
+var apel = $('#apellido').html()
+var edi = $('#edad').html()
+var cue = $('#cuerta').html()
+
+$(function(){
+    var persona = 'Bienvenido ' + nom + ' ' + apel + ', tienes ' + edi + ' años'
+    console.log(cue)
+    $('#cuerta').html(persona)
+})
