@@ -32,13 +32,26 @@
  * Bienvenido {nombre} {apellido}, tienes {edad} años
  * 
  */
-var nom = $('#nombre').html()
-var apel = $('#apellido').html()
-var edi = $('#edad').html()
-var cue = $('#cuerta').html()
+
+// var nom = $('#nombre').html()
+// var apel = $('#apellido').html()
+// var edi = $('#edad').html()
+// var cue = $('#cuerta').html()
+
+// $(function(){
+//     var persona = 'Bienvenido ' + nom + ' ' + apel + ', tienes ' + edi + ' años'
+//     console.log(cue)
+//     $('#cuerta').html(persona)
+// })
 
 $(function(){
-    var persona = 'Bienvenido ' + nom + ' ' + apel + ', tienes ' + edi + ' años'
-    console.log(cue)
-    $('#cuerta').html(persona)
+    //se ejecuta la funcion una vez que se carguen todos los elementos del dom, se va a buscar el formulario, cuando se envíe el formulario se va a buscar el input
+    // la letra 'e' hace referencia a un evento (segun nosotros)
+    $('#formulario').on('submit', function(e) {
+        // preventDefault va a detener la ejecucion inherente al submit
+        e.preventDefault()
+        var valor = $('#campo').val()
+        console.log(valor)
+    })
+
 })
