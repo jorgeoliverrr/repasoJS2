@@ -93,17 +93,79 @@
 //     })
 // })
 
-var arr = []
+// var arr = []
+// $(function(){
+//     $('#formulario').on('submit', function(e){
+//         e.preventDefault()
+//         var el = $('#campo').val()
+//         arr.push(el)
+//         var plantilla = ''
+//         for(var i = 0; i < arr.length; i++){
+//             plantilla = plantilla + ' <li>' + arr[i] + '</li>'
+//         }
+//         $('#contenido').html(plantilla)
+//     })
+// })
+
+//agrega un elemento de lista al final append
+// $(function(){
+//     $('#formulario').on('submit', function(e){
+//         e.preventDefault()
+//         var el = $('#campo').val()
+//         $('#contenido').append('<li>' + el + '</li>')
+//     })
+// })
+
+// agrega un elemento de lista el principio prepend
+// $(f
+
+
+// $(function(){
+//     $('#formulario').on('submit', function(e){
+//         e.preventDefault()
+//         var el = $('#campo').val()
+//         $('#contenido').prepend('<li>' + el + '</li>')
+//     })
+// })
+
+/**
+ * Cuando el formulario se envíe, 
+ * ir a buscar los valores de ambos campos
+ * El primero será un titulo
+ * el segundo sera el contenido o descripcion
+ * El titulo tiene que ser de al menos 5 caracteres de longitud
+ * de lo contrario mostrar un error "Titulo muy corto"
+ * El contenido debe ser de al menos 5 caracteres de longitud
+ * de lo contrario mostrar un error "Contenido muy corto"
+ * Si ambos son mayores de 5 caracteres de longitud
+ * agregarlo al cuerpo del HTML con la siguiente estructura
+ * <div>
+ * <h1>Titulo</h1>
+ * <p>contenido</p>
+ * </div>
+ * 
+ */
 
 $(function(){
-    $('#formulario').on('submit', function(e){
+    
+    $('#formulario').on('submit', function(e) {
         e.preventDefault()
-        var el = $('#campo').val()
-        arr.push(el)
-        var plantilla = ''
-        for(var i = 0; i < arr.length; i++){
-            plantilla = plantilla + arr[i] + ''
+        var til = $('#campo').val()
+        var cue = $('#campo2').val()
+        var con = $('#contenido').val()
+        $('#pepe').html('')
+        if( til.length > 4 && cue.length > 4){
+            $('#pepe').html('El Titulo y contenido OK ')
+            $('#contenido').html('<div><h1>' + til + '</h1><p>' + cue + '</p></div>')
+            
+
+        }else if(til.length <5){
+            $('#pepe').html('El título es muy corto')
+            if(cue.length <5){
+            $('#pepe').html('El titulo y el contenido es muy pequeño')
+            }
+        }else{
+            $('#pepe').html('El contenido es muy pequeño')
         }
-        $('#contenido').html(plantilla)
     })
 })
