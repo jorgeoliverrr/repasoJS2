@@ -65,20 +65,45 @@
  * 
  */
 
-$(function(){
+// $(function(){
     
-    $('#formulario').on('submit', function(e) {
-        e.preventDefault()
-        var valor = $('#campo').val()
-        var pepe = $('#pepe').val()
-        var stgr = valor.length
-        if(stgr == 0){
-            console.log('El campo no puede estar vacío')
-            $('#pepe').html(pepe + 'El campo no puede estar vacío')
-        }else{
-            console.log('Bienvenido: ', valor)
-             $('#pepe').html(pepe + 'Bienvenido: ' + valor)
-        }
-    })
+//     $('#formulario').on('submit', function(e) {
+//         e.preventDefault()
+//         var valor = $('#campo').val()
+//         var stgr = valor.length
+//         if(stgr == 0){
+//             console.log('El campo no puede estar vacío')
+//             $('#pepe').html('El campo no puede estar vacío')
+//         }else{
+//             console.log('Bienvenido: ', valor)
+//              $('#pepe').html('Bienvenido: ' + valor)
+//         }
+//     })
+// })
+ 
 
+// push agrega elementos al array
+// var arr = []
+// $(function(){
+//     $('#formulario').on('submit', function(e){
+//         e.preventDefault()
+//         var el = $('#campo').val()
+//         arr.push(el)
+//         console.log(arr)
+//     })
+// })
+
+var arr = []
+
+$(function(){
+    $('#formulario').on('submit', function(e){
+        e.preventDefault()
+        var el = $('#campo').val()
+        arr.push(el)
+        var plantilla = ''
+        for(var i = 0; i < arr.length; i++){
+            plantilla = plantilla + arr[i] + ''
+        }
+        $('#contenido').html(plantilla)
+    })
 })
