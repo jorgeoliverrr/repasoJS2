@@ -44,14 +44,41 @@
 //     $('#cuerta').html(persona)
 // })
 
+// $(function(){
+//     //se ejecuta la funcion una vez que se carguen todos los elementos del dom, se va a buscar el formulario, cuando se envíe el formulario se va a buscar el input
+//     // la letra 'e' hace referencia a un evento (segun nosotros)
+//     $('#formulario').on('submit', function(e) {
+//         // preventDefault va a detener la ejecucion inherente al submit
+//         e.preventDefault()
+//         var valor = $('#campo').val()
+//         console.log(valor)
+//     })
+
+// })
+
+/**
+ *  Obtener un valor de un campo, pero si el contenido de este es vacío,
+ *  imprimir en una etiqueta html:
+ *  'el campo no puede estar vacio'
+ *  En caso de tener contenido, imprimir en la etiqueta:
+ *  'bienvenido {campo}'
+ * 
+ */
+
 $(function(){
-    //se ejecuta la funcion una vez que se carguen todos los elementos del dom, se va a buscar el formulario, cuando se envíe el formulario se va a buscar el input
-    // la letra 'e' hace referencia a un evento (segun nosotros)
+    
     $('#formulario').on('submit', function(e) {
-        // preventDefault va a detener la ejecucion inherente al submit
         e.preventDefault()
         var valor = $('#campo').val()
-        console.log(valor)
+        var pepe = $('#pepe').val()
+        var stgr = valor.length
+        if(stgr == 0){
+            console.log('El campo no puede estar vacío')
+            $('#pepe').html(pepe + 'El campo no puede estar vacío')
+        }else{
+            console.log('Bienvenido: ', valor)
+             $('#pepe').html(pepe + 'Bienvenido: ' + valor)
+        }
     })
 
 })
